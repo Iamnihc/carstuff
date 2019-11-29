@@ -1,10 +1,9 @@
-let $ = require('jquery');
+// window.jQuery = window.$ = require('jquery');
 let fs = require('fs');
 let filename = 'trips';
 
 
 function loadtrips() {
-
   //Check if file exists
   if (fs.existsSync(filename)) {
     let data = fs.readFileSync(filename, 'utf8').split('\n');
