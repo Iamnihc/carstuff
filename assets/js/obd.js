@@ -3,91 +3,89 @@ let fs = require('fs');
 let filename = 'trips';
 
 
-
-
 function loadtrips() {
 
-   //Check if file exists
-   if(fs.existsSync(filename)) {
-      let data = fs.readFileSync(filename, 'utf8').split('\n');
-      console.log(data);
+  //Check if file exists
+  if (fs.existsSync(filename)) {
+    let data = fs.readFileSync(filename, 'utf8').split('\n');
+    console.log(data);
+  } else {
+    console.log("File Doesn\'t Exist. Creating new file.")
+    fs.writeFile(filename, '', (err) => {
+      if (err) {
+        console.log(err)
       }
-
-    else {
-      console.log("File Doesn\'t Exist. Creating new file.")
-      fs.writeFile(filename, '', (err) => {
-         if(err){console.log(err)}
-      })
-   }
+    })
+  }
 }
 
 loadtrips()
 
 
-function getVin(){
+function getVin() {
   return "JT2BG22K310******";
 }
 
-function getMake(){
+function getMake() {
   return;
 }
 
-function getModel(){
+function getModel() {
   return "Not available";
 }
 
-function getAge(){
+function getAge() {
   return;
 }
 
-function getGas(){
+function getGas() {
   return;
 }
 
-function getOdo(){
+function getOdo() {
   return;
 }
 
-function getTripA(){
+function getTripA() {
   return;
 }
 
-function getTripAMpg(){
+function getTripAMpg() {
   return;
 }
 
-function getTripATime(){
+function getTripATime() {
   return;
 }
 
-function getTripB(){
+function getTripB() {
   return;
 }
 
-function getTripBMpg(){
+function getTripBMpg() {
   return;
 }
 
-function getTripBTime(){
+function getTripBTime() {
   return;
 }
 
-function getTemp(){
+function getTemp() {
   return;
 }
 
-function getThrottle(){
+function getThrottle() {
   return Math.floor(Math.random() * 100);
 }
 
-function getRpm(){
-  return Math.floor(Math.random() * 7000) ;
+function getRpm() {
+  return Math.floor(Math.random() * 7000);
 }
 
-function getSpeed(){
-  return Math.floor(Math.random() * 140) ;
+function getSpeed() {
+  return Math.floor(Math.random() * 140);
 }
 
-function getMpg(){
+function getMpg() {
   return;
 }

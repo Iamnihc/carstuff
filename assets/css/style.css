@@ -1,51 +1,57 @@
 /* General */
-*{
-  margin:0px;
-}
-html{
-  overflow:hidden;
-}
-body{
-  font-family:sans-serif;
-  height:100vh;
-  background-color:black;
-  color:white
+* {
+  margin: 0px;
 }
 
-.touch{
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: black;
+  color: white
+}
+
+.touch {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  width:10vw;
+  width: 10vw;
   background-color: #555;
 }
 
 /*header stuff*/
-#topstats{
-  height:8vh;
+#topstats {
+  height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
-.codes{
-  width:30vw;
+
+.codes {
+  width: 30vw;
   -webkit-app-region: drag;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
-.warnings.fine{
-  color:#222;
+
+.warnings.fine {
+  color: #222;
 }
-.warnings.bad{
-  color:#F22;
+
+.warnings.bad {
+  color: #F22;
 }
+
 /* instruments */
-#instruments{
-  height:86vh;
+#instruments {
+  height: 86vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,15 +59,16 @@ body{
   flex-wrap: wrap;
 }
 
-.meter{
-  width:32.6%;
-  height:50%;
+.meter {
+  width: 32.6%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.metertext{
+
+.metertext {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,41 +76,40 @@ body{
 }
 
 /* Odometer */
-#trip{
-    height:6vh;
+#trip {
+  height: 6vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.odo{
-  height:100%;
-  width:40vw;
+.odo {
+  height: 100%;
+  width: 40vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
-.tripa{
-  height:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-}
-.tripb{
-  height:100%;
+
+.tripa {
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
 }
 
+.tripb {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
 
-
-
-.odosect{
+.odosect {
   display: flex;
   flex-direction: row;
   justify-content: center;

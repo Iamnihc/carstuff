@@ -9,7 +9,7 @@ var odo = getOdo();
 // trip a
 var tripAdist = getTripA();
 var tripAmpg = getTripAMpg();
-var tripAtime= getTripATime();
+var tripAtime = getTripATime();
 //trip b
 var tripBdist = getTripB();
 var tripBmpg = getTripBMpg();
@@ -17,8 +17,8 @@ var tripBtime = getTripBTime();
 
 
 // second functions
-var time = String(new Date()).substring(16,24);
-var temp =getTemp();
+var time = String(new Date()).substring(16, 24);
+var temp = getTemp();
 var mpg = getMpg();
 
 // ms functions
@@ -26,38 +26,40 @@ var throttle = getThrottle();
 var rpm = getRpm();
 var speed = getSpeed();
 
-function updateMs(){
-   throttle = getThrottle();
-   rpm = getRpm();
-   speed = getSpeed();
-   // speedgauge.set(speed);
-   document.getElementById("speednumber").innerHTML = speed;
+function updateMs() {
+  throttle = getThrottle();
+  rpm = getRpm();
+  speed = getSpeed();
+  // speedgauge.set(speed);
+  document.getElementById("speednumber").innerHTML = speed;
 }
-function updateSec(){
-   time = String(new Date()).substring(16,24);
-   temp =getTemp();
-   mpg = getMpg();
-  document.getElementById("time").innerHTML=time;
+
+function updateSec() {
+  time = String(new Date()).substring(16, 24);
+  temp = getTemp();
+  mpg = getMpg();
+  document.getElementById("time").innerHTML = time;
 }
-function updateMin(){
-   gas = getGas();
-   odo = getOdo();
+
+function updateMin() {
+  gas = getGas();
+  odo = getOdo();
   // trip a
-   tripAdist = getTripA();
-   tripAmpg = getTripAMpg();
-   tripAtime= getTripATime();
+  tripAdist = getTripA();
+  tripAmpg = getTripAMpg();
+  tripAtime = getTripATime();
   //trip b
-   tripBdist = getTripB();
-   tripBmpg = getTripBMpg();
-   tripBtime = getTripBTime();
+  tripBdist = getTripB();
+  tripBmpg = getTripBMpg();
+  tripBtime = getTripBTime();
 }
 
 // INIT EVERYTHING
-function setStarters(){
+function setStarters() {
   vin = getVin();
   age = getAge();
   vin = 'JT2BG22K310******'
-  age = 200 + vin.substring(9,10);
+  age = 200 + vin.substring(9, 10);
 
   updateMs();
   updateSec();
