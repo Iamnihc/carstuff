@@ -1,6 +1,42 @@
-// window.jQuery = window.$ = require('jquery');
+
 let fs = require('fs');
 let filename = 'trips';
+
+// trip data
+var tripastartmiles;
+var tripbstartmiles;
+var tripastarttime;
+var tripbstarttime;
+
+// basic info
+var vin = getVin();
+var make = getMake();
+var model = getModel();
+var age = getAge();
+var fueltype = getFuelType()
+
+// half min functions
+var gas = getGas();
+var odo = getOdo();
+// trip a
+var tripAdist = getTripA();
+var tripAmpg = getTripAMpg();
+var tripAtime = getTripATime();
+//trip b
+var tripBdist = getTripB();
+var tripBmpg = getTripBMpg();
+var tripBtime = getTripBTime();
+
+
+// second functions
+var time = String(new Date()).substring(16, 24);
+var temp = getTemp();
+var mpg = getMpg();
+
+// ms functions
+var throttle = getThrottle();
+var rpm = getRpm();
+var speed = getSpeed();
 
 
 function loadtrips() {
@@ -10,15 +46,26 @@ function loadtrips() {
     console.log(data);
   } else {
     console.log("File Doesn\'t Exist. Creating new file.")
-    fs.writeFile(filename, '', (err) => {
+    fs.writeFile(filename, "a: "+ getOdo() +" "+ Math.floor(Date.now()/86400000) +" "+ "0" + "\n" + "b: "+ getOdo() +" "+ Math.floor(Date.now()/86400000) +" "+ "0", (err) => {
       if (err) {
         console.log(err)
       }
     })
   }
 }
+function resetTripA(){
+  fs.writeFile(filename, "a: "+ getOdo() +" "+ Math.floor(Date.now()/86400000)+" "+ "0" + "\n" + "b: "+ tripastbstartmiles +" "+ tripbstartime +" "+ "0"  )
+  tripastartmiles = 0;
+  tripastarttime = 0;
 
-loadtrips()
+}
+function resetTripB(){
+  fs.writeFile(filename, "a: "+ tripastastartmiles +" "+ tripastartime +" "+ "0" +"\n"+ "b:"+ getOdo() +" "+ Math.floor(Date.now()/86400000)+" "+"0" )
+  tripbstarttime = 0;
+  tripbstartmiles = 0;
+}
+
+loadtrips();
 
 
 function getVin() {
@@ -26,7 +73,18 @@ function getVin() {
 }
 
 function getMake() {
-  return;
+  maker = "UNKNOWN";
+  var vinnumber = getVin()
+
+  console.log(matchmaker(man[0]));
+  man.forEach(matchmaker)
+  function matchmaker(value){
+    console.log(value);
+    if (value.includes(vinnumber.substring(0,3)) || value.includes(vinnumber.substring(0,2))){
+      maker = value[0];
+    }
+  }
+  return maker
 }
 
 function getModel() {
@@ -34,19 +92,19 @@ function getModel() {
 }
 
 function getAge() {
-  return;
+  return age = 200 + vin.substring(9, 10);
 }
 
 function getGas() {
-  return;
+  return Math.floor(Math.random() * 100);
 }
 
 function getOdo() {
-  return;
+  return Math.floor(Math.random() * 500000);
 }
 
 function getTripA() {
-  return;
+ return getOdo()-
 }
 
 function getTripAMpg() {
@@ -54,7 +112,7 @@ function getTripAMpg() {
 }
 
 function getTripATime() {
-  return;
+  return Math.floor(Date.now()/86400000) - tripastartime;
 }
 
 function getTripB() {
@@ -70,7 +128,7 @@ function getTripBTime() {
 }
 
 function getTemp() {
-  return;
+  return Math.floor(Math.random() * 245)-40;
 }
 
 function getThrottle() {
@@ -86,5 +144,12 @@ function getSpeed() {
 }
 
 function getMpg() {
-  return;
+  return "placeholder";
+}
+
+function getFuelType(){
+  return "placeholder, % ethnol";
+}
+function getTorque(){
+  return "placeholder";
 }

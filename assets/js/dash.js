@@ -1,36 +1,10 @@
-var vin = getVin();
-var make = getMake();
-var model = getModel();
-var age = getAge();
-
-// half min functions
-var gas = getGas();
-var odo = getOdo();
-// trip a
-var tripAdist = getTripA();
-var tripAmpg = getTripAMpg();
-var tripAtime = getTripATime();
-//trip b
-var tripBdist = getTripB();
-var tripBmpg = getTripBMpg();
-var tripBtime = getTripBTime();
-
-
-// second functions
-var time = String(new Date()).substring(16, 24);
-var temp = getTemp();
-var mpg = getMpg();
-
-// ms functions
-var throttle = getThrottle();
-var rpm = getRpm();
-var speed = getSpeed();
-
 function updateMs() {
   throttle = getThrottle();
   rpm = getRpm();
+  rpmgauge.set(rpm/1000);
+  document.getElementById("rpmnumber").innerHTML = rpm;
   speed = getSpeed();
-  // speedgauge.set(speed);
+  speedgauge.set(speed);
   document.getElementById("speednumber").innerHTML = speed;
 }
 
@@ -57,9 +31,19 @@ function updateMin() {
 // INIT EVERYTHING
 function setStarters() {
   vin = getVin();
+  make = getMake();
+  model = getModel();
   age = getAge();
-  vin = 'JT2BG22K310******'
-  age = 200 + vin.substring(9, 10);
+  fueltype = getFuelType();
+  torque = getTorque();
+  document.getElementById("carmake").innerHTML =make;
+
+  // car info
+  document.getElementById("vinnum").innerHTML = vin;
+  document.getElementById("mannum").innerHTML =make;
+  document.getElementById("yearnum").innerHTML =age;
+  document.getElementById("fueltypenum").innerHTML = fueltype;
+  document.getElementById("torquenum").innerHTML = torque;
 
   updateMs();
   updateSec();

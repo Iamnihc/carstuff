@@ -9,7 +9,7 @@
   <title> Dashboard </title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
-  <script>window.$ = window.jQuery = require('jquery');</script>
+
 </head>
 
 <body>
@@ -45,7 +45,11 @@
       </div>
     </div>
     <div class=meter id=rpm>
-      9000 rpm
+      <canvas class=gauge id=rpmmeter width=300px height=200px></canvas>
+      <div class=metertext>
+        <h2 id=rpmnumber>999</h2>
+        <h2 class=meterlabel>rpm</h2>
+      </div>
     </div>
     <div class=meter id=throttle>
       100% throttle
@@ -136,7 +140,7 @@
         </div>
         <div class="infostat stat torque" id=torque>
           <h2 class=label id=torquelabel>Torque:</h2>
-          <h2 class=infonum id=odonum>Torque</h2>
+          <h2 class=infonum id=torquenum>Torque</h2>
         </div>
       </div>
 
@@ -144,14 +148,16 @@
 
   </div>
   <!-- You can also require other files to run in this process -->
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; } </script>
+  <script>window.$ = window.jQuery = require('jquery');</script>
   <script src="./assets/js/renderer.js"></script>
   <script src="assets/js/man.js"></script>
   <script src="assets/js/obd.js"></script>
   <script src="assets/js/gauge.js"></script>
   <script src="assets/js/meter.js"></script>
   <script src="assets/js/dash.js"></script>
-
   <script src="assets/js/modal.js"></script>
+  <script>if (window.module) module = window.module;</script>
 </body>
 
 </html>
