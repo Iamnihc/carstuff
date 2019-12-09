@@ -2,162 +2,195 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-  <title> Dashboard </title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
+    <title> Dashboard </title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
 
 </head>
 
 <body>
-  <div id=topstats>
-    <div class=touch id=infobutton>
-      <h2 id=carmake>Make</h2>
-    </div>
-    <div id=codes1 class=codes>
-      <h2 class="warnings fine" id=batcode>BAT</h2>
-      <h2 class="warnings fine" id=oilcode>OIL</h2>
-      <h2 class="warnings fine" id=gascode>GAS</h2>
-      <h2 class="warnings fine" id=errcode>ERR</h2>
-    </div>
-    <h2 id=time>00:00:00AM</h2>
-    <div id=codes2 class=codes>
-      <h2 class="warnings fine" id=engcode>ENG</h2>
-      <h2 class="warnings fine" id=chacode>CHA</h2>
-      <h2 class="warnings fine" id=netcode>NET</h2>
-      <h2 class="warnings fine" id=mancode>MAN</h2>
-
-    </div>
-    <div class=touch id=vinfo>
-      <h2 class=touch id=codesbutton>Codes</h2>
-    </div>
-  </div>
-
-  <div id=instruments>
-    <div class=meter id=speed>
-      <canvas class=gauge id=speedmeter width=300px height=200px></canvas>
-      <div class=metertext>
-        <h2 id=speednumber>999</h2>
-        <h2 class=meterlabel>mph</h2>
-      </div>
-    </div>
-    <div class=meter id=rpm>
-      <canvas class=gauge id=rpmmeter width=300px height=200px></canvas>
-      <div class=metertext>
-        <h2 id=rpmnumber>999</h2>
-        <h2 class=meterlabel>rpm</h2>
-      </div>
-    </div>
-    <div class=meter id=throttle>
-      100% throttle
-    </div>
-    <div class=meter id=mpg>
-      30mpg
-    </div>
-    <div class=meter id=temp>
-      200 f
-    </div>
-    <div class=meter id=fuel>
-      100%
-    </div>
-  </div>
-
-
-  <div id=trip>
-    <div class="odo" id=tripa>
-      <h2 id=labeltripa class="touch tripa">A</h2>
-      <div class=odosect>
-        <h3 id=disttripa class="tripa">10</h3>
-        <h3 class="tripa label">&nbsp;Mi</h3>
-      </div>
-      <div class=odosect>
-        <h3 id=daytripa class="tripa">10</h3>
-        <h3 class="tripa label">&nbsp;Days</h3>
-      </div>
-      <div class=odosect>
-        <h3 id=daytripa class="tripa">10</h3>
-        <h3 class="tripa label">&nbsp;Mpg avg</h3>
-      </div>
-    </div>
-    <div id=totalodo>
-      <div class=odosect>
-        <h3 id=odo class="tmiles">100,000</h3>
-        <h3 class="tmiles label">&nbsp;Mi total</h3>
-      </div>
-    </div>
-    <div class=odo id=tripb>
-      <div class=odosect>
-        <h3 id=mpgtripb class="tripb">20</h3>
-        <h3 class="tripb label">&nbsp;Mpg avg</h3>
-      </div>
-      <div class=odosect>
-        <h3 id=daytripb class="tripb">100</h3>
-        <h3 class="tripb label">&nbsp;Days</h3>
-      </div>
-      <div class=odosect>
-        <h3 id=disttripb class="tripb">100</h3>
-        <h3 class="tripb label">&nbsp;Mi</h3>
-      </div>
-      <h2 id=labeltripb class="touch tripb">B</h2>
-    </div>
-  </div>
-
-
-  <div id="carinfomodal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-head">
-        <span class="close">&times;</span>
-        <h1>Car info</h1>
-      </div>
-      <div id=vinfo>
-        <div class="infostat stat vin" id=vin>
-          <h2 class=label id=vinlabel>Vin:</h2>
-          <h2 class=infonum id=vinnum>(insert vin)JT2BG22K310******</h2>
+    <div id=topstats>
+        <div class=touch id=infobutton>
+            <h2 id=carmake>Make</h2>
         </div>
-        <div class="infostat stat year" id=year>
-          <h2 class=label id=yearlabel>Year:</h2>
-          <h2 class=infonum id=yearnum>Insert Year</h2>
+        <div id=codes1 class=codes>
+            <h2 class="warnings fine" id=batcode>BAT</h2>
+            <h2 class="warnings fine" id=oilcode>OIL</h2>
+            <h2 class="warnings fine" id=gascode>GAS</h2>
+            <h2 class="warnings fine" id=errcode>ERR</h2>
         </div>
-        <div class="infostat stat man" id=man>
-          <h2 class=label id=manlabel>Make:</h2>
-          <h2 class=infonum id=mannum>Insert Make</h2>
-        </div>
-        <div class="infostat stat model" id=model>
-          <h2 class=label id=modellabel>Model:</h2>
-          <h2 class=infonum id=modelnum>Not available</h2>
-        </div>
-        <div class="infostat stat fueltype" id=fueltype>
-          <h2 class=label id=fueltypelabel>Fuel:</h2>
-          <h2 class=infonum id=fueltypenum>Insert type</h2>
-        </div>
-        <div class="infostat stat odo" id=odo>
-          <h2 class=label id=odolabel>Miles:</h2>
-          <h2 class=infonum id=odonum>Insert Odometer</h2>
-        </div>
-        <div class="infostat stat torque" id=torque>
-          <h2 class=label id=torquelabel>Torque:</h2>
-          <h2 class=infonum id=torquenum>Torque</h2>
-        </div>
-      </div>
+        <h2 id=time>00:00:00AM</h2>
+        <div id=codes2 class=codes>
+            <h2 class="warnings fine" id=engcode>ENG</h2>
+            <h2 class="warnings fine" id=chacode>CHA</h2>
+            <h2 class="warnings fine" id=netcode>NET</h2>
+            <h2 class="warnings fine" id=mancode>MAN</h2>
 
+        </div>
+        <div class=touch id=vcodes>
+            <h2 class=touch id=codesbutton>Codes</h2>
+        </div>
     </div>
 
-  </div>
-  <!-- You can also require other files to run in this process -->
-  <script>if (typeof module === 'object') { window.module = module; module = undefined; } </script>
-  <script>window.$ = window.jQuery = require('jquery');</script>
-  <script src="./assets/js/renderer.js"></script>
-  <script src="assets/js/man.js"></script>
-  <script src="assets/js/obd.js"></script>
-  <script src="assets/js/gauge.js"></script>
-  <script src="assets/js/meter.js"></script>
-  <script src="assets/js/dash.js"></script>
-  <script src="assets/js/modal.js"></script>
-  <script>if (window.module) module = window.module;</script>
+    <div id=instruments>
+        <div class=meter id=speed>
+            <canvas class=gauge id=speedmeter width=300px height=200px></canvas>
+            <div class=metertext>
+                <h2 id=speednumber>999</h2>
+                <h2 class=meterlabel>mph</h2>
+            </div>
+        </div>
+        <div class=meter id=rpm>
+            <canvas class=gauge id=rpmmeter width=300px height=200px></canvas>
+            <div class=metertext>
+                <h2 id=rpmnumber>999</h2>
+                <h2 class=meterlabel>rpm</h2>
+            </div>
+        </div>
+        <div class=meter id=throttle>
+            100% throttle
+        </div>
+        <div class=meter id=mpg>
+            30mpg
+        </div>
+        <div class=meter id=temp>
+            200 f
+        </div>
+        <div class=meter id=fuel>
+            100%
+        </div>
+    </div>
+
+
+    <div id=trip>
+        <div class="odo" id=tripa>
+            <h2 id=labeltripa class="touch tripa">A</h2>
+            <div class=odosect>
+                <h3 id=disttripa class="tripa">10</h3>
+                <h3 class="tripa label">&nbsp;Mi</h3>
+            </div>
+            <div class=odosect>
+                <h3 id=daytripa class="tripa">10</h3>
+                <h3 class="tripa label">&nbsp;Days</h3>
+            </div>
+            <div class=odosect>
+                <h3 id=mpgtripa class="tripa">10</h3>
+                <h3 class="tripa label">&nbsp;Mpg avg</h3>
+            </div>
+        </div>
+        <div id=totalodo>
+            <div class=odosect>
+                <h3 id=mainodo class="tmiles">100,000</h3>
+                <h3 class="tmiles label">&nbsp;Mi total</h3>
+            </div>
+        </div>
+        <div class=odo id=tripb>
+            <div class=odosect>
+                <h3 id=mpgtripb class="tripb">20</h3>
+                <h3 class="tripb label">&nbsp;Mpg avg</h3>
+            </div>
+            <div class=odosect>
+                <h3 id=daytripb class="tripb">100</h3>
+                <h3 class="tripb label">&nbsp;Days</h3>
+            </div>
+            <div class=odosect>
+                <h3 id=disttripb class="tripb">100</h3>
+                <h3 class="tripb label">&nbsp;Mi</h3>
+            </div>
+            <h2 id=labeltripb class="touch tripb">B</h2>
+        </div>
+    </div>
+
+
+    <div id="carinfomodal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-head">
+                <span class="close">&times;</span>
+                <h1 class="titleswitch info">App info</h1>
+                <h1 class="titleswitch info">Car info</h1>
+
+            </div>
+            <div id=vinfo>
+                <div class="infostat stat vin" id=vin>
+                    <h2 class=label id=vinlabel>Vin:</h2>
+                    <h2 class=infonum id=vinnum>(insert vin)JT2BG22K310******</h2>
+                </div>
+                <div class="infostat stat year" id=year>
+                    <h2 class=label id=yearlabel>Year:</h2>
+                    <h2 class=infonum id=yearnum>Insert Year</h2>
+                </div>
+                <div class="infostat stat man" id=man>
+                    <h2 class=label id=manlabel>Make:</h2>
+                    <h2 class=infonum id=mannum>Insert Make</h2>
+                </div>
+                <div class="infostat stat model" id=model>
+                    <h2 class=label id=modellabel>Model:</h2>
+                    <h2 class=infonum id=modelnum>Not available</h2>
+                </div>
+                <div class="infostat stat fueltype" id=fueltype>
+                    <h2 class=label id=fueltypelabel>Fuel:</h2>
+                    <h2 class=infonum id=fueltypenum>Insert type</h2>
+                </div>
+                <div class="infostat stat odo" id=odo>
+                    <h2 class=label id=odolabel>Miles:</h2>
+                    <h2 class=infonum id=odonum>Insert Odometer</h2>
+                </div>
+                <div class="infostat stat torque" id=torque>
+                    <h2 class=label id=torquelabel>Torque:</h2>
+                    <h2 class=infonum id=torquenum>Torque</h2>
+                </div>
+            </div>
+            <div id=ainfo>
+
+                <div class="infostat stat version" id=version>
+                    <h2 class=label id=versionlabel>Version:</h2>
+                    <h2 class=infonum id=versionnum>0.1.2 (beta)</h2>
+                </div>
+                <div class="infostat stat date" id=sdate>
+                    <h2 class=label id=datelabel>Rev. Date:</h2>
+                    <h2 class=infonum id=versionnum>29 Nov 2019</h2>
+                </div>
+                <br>
+                <div class="infostat stat appname" id=a ppname>
+                    <h2 class=infonum id=namelabel>Testla Dashboard</h2>
+                </div>
+                <div class="infostat stat maker" id=maker>
+                    <h2 class=infonum id=makerlabel>Made By Chinmai Srinivas</h2>
+                </div>
+                <div class="infostat stat other" id=other>
+                    <h2 class=infonum id=otherlabel>Not Associated With Telsa Motors</h2>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script src="./assets/js/renderer.js"></script>
+    <script src="assets/js/man.js"></script>
+    <script src="assets/js/obd.js"></script>
+    <script src="assets/js/gauge.js"></script>
+    <script src="assets/js/meter.js"></script>
+    <script src="assets/js/dash.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
 </body>
 
 </html>
